@@ -43,7 +43,7 @@ var check=false;
 
 function passprocted(req,res,next){
 res.set('WWW-Authenticate','Basic realm="simple App"')
-if(req.headers.authorization == 'Basic am9zZTpwYXNz'){
+if(req.headers.authorization == 'Basic am9zZToxMjM='){
     next()
   }else{
     res.status(401).send("please prove id password")
@@ -83,7 +83,14 @@ res.render("uploadedsucessfuly")
 
 
     )
+app.get('/reseted',passprocted,async(req,res)=>{
 
+ 
+  const  userdata= await collection.deleteMany();
+  const  userdata1= await studentmarks.deleteMany();
+  const  userdata2= await useradd.deleteMany();
+  res.render("getdelted")
+})
 const port=3000
 app.listen(port,()=>{
     console.log("server is running 3000")
