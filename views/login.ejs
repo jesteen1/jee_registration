@@ -34,12 +34,25 @@
                      Sumbit</button>
                      <br> <br>
                   
-                <a class="p-5 cursor-pointer hover:text-red-500 capitalize  text-3xl" href="/reseted">reset</a>
+                <a class="p-5 cursor-pointer hover:text-red-500 capitalize  text-3xl"   id="reset">reset</a>
         </div>
      
  
     </form>
 </body>
+<script>
+  var  reset_btn=document.getElementById("reset");
+  reset_btn.onclick=()=>{
+    var get_data=confirm("Are you confirm to reset data fully")
+    
+    if(get_data==true){
+         window.location.href="/reseted"
+        
+       
+
+    }
+  }
+</script>
 <style>
 
     body{
